@@ -11,7 +11,7 @@
     $num = mysqli_affected_rows($con);
 
     if($num > 0) {
-         header("Location:../index.php?inf=1");
+         header('location:http://'.$site.'/index.php?inf=1');
     } 
 
 ?>
