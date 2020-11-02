@@ -2,14 +2,8 @@ CREATE DATABASE listaTarefas
 
 CREATE TABLE Usuario (
 	codigoIdentificador INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    login VARCHAR(20) NOT NULL,
-    senha VARCHAR(20) NOT NULL
-)
-
-CREATE TABLE usuarios (
-	codigoIdentificador INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     loginUsuario VARCHAR(20) NOT NULL,
-    senha VARCHAR(20) NOT NULL
+    senha longText NOT NULL
 )
 
 CREATE TABLE Tarefa(
@@ -25,13 +19,13 @@ CREATE TABLE Tarefa(
 
 USE listaTarefas
 
-SELECT * FROM Usuario
+SELECT * FROM listaTarefas.Usuario
 
 INSERT INTO Usuario (login, senha)
-VALUES ('Marcelo 4', '155')
+VALUES ('TesteLogin', 'TesteSenha')
 
 INSERT INTO Tarefa (titulo, descricao, codigoIdUsuario, statusTarefa)
-VALUES ('Teste 1', 'Fazendo teste', 1, 'Finalizado'),
+VALUES ('Teste Título', 'Teste Descrição', 1, 'TesteStatus'),
 	('Teste 2', 'Fazendo teste 2', 3, 'Pendente'),
     ('Teste 3', 'Fazendo teste 3', 2, 'Finalizado')
  

@@ -4,26 +4,25 @@ require_once("connection.php");
 
 session_start();
 
-$loginUsuario = $_POST['loginUsuario'];
-$senha = md5($_POST['senha']);
+$loginVerifica = $_POST['loginUsuario'];
+$senhaVerifica = $_POST['senha'];
 
-$query = "SELECT * FROM $nomeBanco.Usuario WHERE loginUsuario = '".$loginUsuario."' and senha = '".$senha."'";
+$queryVerifica = "SELECT * FROM $nomeBanco.Usuario WHERE loginUsuario = '".$loginVerifica."' and senha = '".$senhaVerifica."'";
 
-$result = mysqli_query($con, $query);
+$resultadoVerifica = mysqli_query($con, $queryVerifica);
 
-$dados = mysqli_fetch_array($result);
-var_dump($dados);
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($resultadoVerifica) > 0) {
 
-    $_SESSION['loginUsuario'] = $dados['login'];
+    $dados = mysqli_fetch_array($resultadoVerifica);
+    $_SESSION['login'] = $dados['loginUsuario'];
     $_SESSION['senha'] = $dados['senha'];
-   header('Location:http://'.$site.'index.php');
+    header('Location:http://'.$site.'home.php');
 
 } else {
-    echo "<script>alert('Login ou Senha inválido(s)! Tente novamente.');</script>";
-    unset($_SESSION['loginUsuario']);
+    unset($_SESSION['login']);
     unset($_SESSION['senha']);
-    echo $login;
-    echo $senha;
-    header('Location:http://'.$site.'login.php?erro=1');
+    header('location:http://'.$site.'index.php?erro=2');
+
 }
+
+?>

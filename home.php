@@ -1,5 +1,6 @@
 <?php
-    if(!isset ($_SESSION['loginUsuario']) and !isset($_SESSION['senha'])){
+session_start();
+    if(!isset($_SESSION['login']) and !isset($_SESSION['senha'])){
         header("Location:index.php?erro=1");
     } 
 ?>

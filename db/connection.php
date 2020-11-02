@@ -6,12 +6,12 @@
     $nomeBanco = "listaTarefas";
     $site = "localhost/ListaTarefas/";
 
-    $con = new mysqli($servidor, $usuario, $senha, $nomeBanco);
+    $con = mysqli_connect($servidor, $usuario, $senha) or die ('Erro de conexão com Banco de Dados: '. mysqli_error($con));
+    mysqli_select_db($con, $nomeBanco) or die ('Erro de seleção do Banco de Dados'.mysqli_error($con));
 
     if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-        }else{
-        echo "Conectou !!";
-        } 
+        die("Connection failed: " . $con->connect_error($con));
+    
+    } 
 
     ?>
