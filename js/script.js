@@ -1,0 +1,3 @@
+function validarSenha(){
+    alert(Funcionou)
+}
