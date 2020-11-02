@@ -11,8 +11,7 @@
     $num = mysqli_affected_rows($con);
 
     if($num > 0) {
-        echo "Conectou !!";
-        header("Location:../index.php?cad=1");
+         header("Location:../index.php?inf=1");
     } 
 
 ?>

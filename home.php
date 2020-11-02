@@ -1,8 +1,12 @@
 <?php
-session_start();
-    if(!isset($_SESSION['login']) and !isset($_SESSION['senha'])){
-        header("Location:index.php?erro=1");
-    } 
+    require_once("bloquear.php");
+    if (isset($_GET['inf'])){
+        if ($_GET['inf'] == 2) {
+            echo "<script>alert('Logout Finalizado! Volte Sempre.');</script>";
+        } else if ($_GET['inf'] == 3) {
+            echo "<script>alert('Nova tarefa cadastrada com sucesso!');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +17,10 @@ session_start();
     <title>TAREFAS</title>
 </head>
 <body>
-    <a href="">Cadastrar Tarefa</a>
+    <a href="cadastroTarefa.php">Cadastrar Tarefa</a>
     <a href="">Listar Tarefas</a>
-    <a href="">Sair</a><br><br>
+    <a href="db/sair.php">Sair</a><br><br>
+    <a href="">Alterar Dados</a>
 
     <table border="1">
         <tr>

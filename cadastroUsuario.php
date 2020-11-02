@@ -8,7 +8,7 @@
 <body>
     <form action="db/cadastrarUsuario.php" method="post">
         Login: 
-        <input type="text" name="loginUsuariogit init"><br>
+        <input type="text" name="loginUsuario"><br>
         Senha: 
         <input type="password" name="senha" id="senha" onkeyup="validarSenha()"><br>
         Confirmação de senha: 

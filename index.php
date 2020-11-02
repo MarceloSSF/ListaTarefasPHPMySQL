@@ -1,18 +1,17 @@
 <?php
     if(isset($_GET['erro'])){
         if($_GET['erro'] == 1) {
-            $erro = 'Acesso negado!' ;
+            echo "<script>alert('Acesso Negado');</script>";
         } else if ($_GET['erro'] == 2){
             echo "<script>alert('Login ou Senha inválido(s)! Tente novamente.');</script>";
-        } else {
-            $erro = "";
-        }
-    } else if (isset($_GET['cad'])){
-        if ($_GET['cad'] == 1) {
-            $cad = 'Usuário Cadastrado com Sucesso!';
-        } else {
-            $cad = "";
-        }
+        } 
+
+    } else if (isset($_GET['inf'])){
+        if ($_GET['inf'] == 1) {
+            echo "<script>alert('Usuário cadastrado com sucesso!');</script>";
+        } else if ($_GET['inf'] == 2) {
+            echo "<script>alert('Logout Finalizado! Volte Sempre.');</script>";
+        } 
     }
 ?>
 
@@ -31,10 +30,9 @@
         <input type="text" name="loginUsuario"> <br>
         Senha:
         <input type="password" name="senha"><br>
-        <span><?php echo $erro; ?></span><br>
-        <span><?php echo $cad; ?></span><br>
+        <span></span>
         <button>Enviar</button>
     </form>
-    <a href="cadastro.php">Cadastre-se</a>
+    <a href="cadastroUsuario.php">Cadastre-se</a>
 </body>
 </html>
