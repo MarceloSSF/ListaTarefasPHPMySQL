@@ -4,6 +4,10 @@
     $cod = $_GET['cod'];
     $sql = "SELECT * FROM Usuario WHERE codigoIdentificador = $cod";
     $resultadoUsuario = mysqli_query($con, $sql);
+
+
+    define('CSS_PATH', 'css/');
+    define('JS_PATH', 'js/');
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +16,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alteração de dados do Perfil</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH; ?>style.css">
+    <script type="text/javascript" src="<?php echo JS_PATH; ?>script.js"></script>
 </head>
 <body>
-
-    <a href="cadastroTarefa.php">Cadastrar Tarefa</a>
-    <a href="home.php">Listar Tarefas</a>
-    <a href="db/sair.php">Sair</a><br><br>
+    <div class="container"> 
+    <div class="box">
+    <form action="home.php"><button>Listar Tarefas</button></form>
     
     <h3>Alteração de Dados Pessoais</h3>
 
@@ -31,6 +36,9 @@
         <button>Alterar</button>
     </form>
     
+
+    <form action="db/sair.php"><button>Logout</button></form>
+    
     <script>
         function validarSenha(){
             $senha = document.getElementById("senha").value;
@@ -43,6 +51,7 @@
             }
         }    
     </script>
-
+    </div>
+    </div>
 </body>
 </html>

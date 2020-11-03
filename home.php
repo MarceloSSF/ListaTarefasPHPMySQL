@@ -19,6 +19,8 @@
             WHERE codigoIdUsuario = $cod ORDER BY dataHoraInicio ASC";
     $resultadoTarefas = mysqli_query($con, $sql);
 
+    define('CSS_PATH', 'css/');
+    define('JS_PATH', 'js/');
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +29,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAREFAS</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH; ?>style.css">
+    <script type="text/javascript" src="<?php echo JS_PATH; ?>script.js"></script>
 </head>
 <body>
-    <a href="cadastroTarefa.php">Cadastrar Tarefa</a>
-    <a href="">Listar Tarefas</a>
-    <a href="db/sair.php">Sair</a><br><br>
 
+<div class="container"> 
+<div class="box">
+    <form action="cadastroTarefa.php"> <button>Cadastrar Tarefas</button> </form>
+    
     <table border="1">
         <tr>
             <td>Título</td>
@@ -63,6 +68,12 @@
     <?php } ?>
     </table>
     <br>    
-    <a href="editorDadosUsuario.php?cod=<?=$cod?>">Alterar Dados da Conta</a>
+    <form action="editorDadosUsuario.php?cod=<?=$cod?>" method="post">
+        <button>Alterar Dados</button>
+    </form>
+    
+    <form action="db/sair.php"><button>Logout</button></form>
+    </div>
+    </div>    
 </body>
 </html>

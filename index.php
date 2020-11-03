@@ -1,4 +1,6 @@
 <?php
+
+    include('js/script.js');
     if(isset($_GET['erro'])){
         if($_GET['erro'] == 1) {
             echo "<script>alert('Acesso Negado');</script>";
@@ -13,6 +15,8 @@
             echo "<script>alert('Logout Finalizado! Volte Sempre.');</script>";
         } 
     }
+
+    define('CSS_PATH', 'css/');
 ?>
 
 <!DOCTYPE html>
@@ -21,18 +25,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Cadastro de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH; ?>style.css">
+    
 </head>
 
 <body>
-    <h3>Login</h3>
-    <form action="db/verificaLogin.php" method="post"> 
-        Login:
-        <input type="text" name="loginUsuario"> <br>
-        Senha:
-        <input type="password" name="senha"><br>
-        <span></span>
-        <button>Enviar</button>
-    </form>
-    <a href="cadastroUsuario.php">Cadastre-se</a>
+    <div class="container"> 
+    <div class="box">
+        <h3>Login </h3>
+        <form action="db/verificaLogin.php" method="post"> 
+            Usuário:
+            <input type="text" name="loginUsuario"> <br>
+            Senha:
+            <input type="password" name="senha"><br>
+            <span></span>
+            <button>Enviar</button>
+        </form>
+        <form action="cadastroUsuario.php" method="post">
+            <button>Cadastre-se</button>
+        </form>
+        
+    </div>
+    </div>    
 </body>
 </html>

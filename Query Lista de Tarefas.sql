@@ -26,6 +26,6 @@ VALUES ('TesteLogin', 'TesteSenha')
 
 INSERT INTO Tarefa (titulo, descricao, codigoIdUsuario, statusTarefa)
 VALUES ('Teste Título', 'Teste Descrição', 1, 'TesteStatus'),
-	('Teste 2', 'Fazendo teste 2', 3, 'Pendente'),
-    ('Teste 3', 'Fazendo teste 3', 2, 'Finalizado')
+	('Teste Título 2', 'Teste Descrição 2', 2, 'TesteStatus 2'),
+    ('Teste Título 3', 'Teste Descrição 3', 2, 'TesteStatus 3')
  
