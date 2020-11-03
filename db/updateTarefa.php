@@ -22,7 +22,7 @@
     $num = mysqli_affected_rows($con);
 
     if($num > 0) {
-       header('location:http://'.$site.'home.php?inf=4');
+       header('location:../home.php?inf=4');
     } 
 
 

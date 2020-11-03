@@ -19,7 +19,7 @@
     <div class="container"> 
     <div class="box">
     
-    <form action="home.php"><button>Listar Tarefas</button></form>
+    <form action="home.php"><button>Listar Tarefas</button></form><br>
 
     <h3>CADASTRO DE TAREFAS</h3>
 

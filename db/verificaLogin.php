@@ -17,12 +17,12 @@ if (mysqli_num_rows($resultadoVerifica) > 0) {
     $_SESSION['login'] = $dados['loginUsuario'];
     $_SESSION['senha'] = $dados['senha'];
     $_SESSION['codigoIdentificador'] = $dados['codigoIdentificador'];
-    header('Location:http://'.$site.'home.php');
+    header('Location:../home.php');
 
 } else {
     unset($_SESSION['login']);
     unset($_SESSION['senha']);
-    header('location:http://'.$site.'index.php?erro=2');
+    header('location:../index.php?erro=2');
 
 }
 

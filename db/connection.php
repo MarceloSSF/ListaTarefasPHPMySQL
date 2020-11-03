@@ -2,9 +2,8 @@
 
     $servidor = "127.0.0.1";
     $usuario = "root";
-    $senha = "Sport100###";
+    $senha = "";
     $nomeBanco = "listaTarefas";
-    $site = "localhost/ListaTarefas/";
 
     $con = mysqli_connect($servidor, $usuario, $senha) or die ('Erro de conexão com Banco de Dados: '. mysqli_error($con));
     mysqli_select_db($con, $nomeBanco) or die ('Erro de seleção do Banco de Dados'.mysqli_error($con));

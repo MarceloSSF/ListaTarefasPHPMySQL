@@ -19,6 +19,9 @@
             WHERE codigoIdUsuario = $cod ORDER BY dataHoraInicio ASC";
     $resultadoTarefas = mysqli_query($con, $sql);
 
+    $sql2 = "SELECT loginUsuario FROM Usuario WHERE codigoIdentificador = $cod";
+    $resultadoUsuario = mysqli_query($con, $sql2);
+
     define('CSS_PATH', 'css/');
     define('JS_PATH', 'js/');
 ?>
@@ -36,8 +39,13 @@
 
 <div class="container"> 
 <div class="box">
-    <form action="cadastroTarefa.php"> <button>Cadastrar Tarefas</button> </form>
-    
+
+    <?php foreach ($resultadoUsuario as $Usuario) {?>
+        <h3>Bem-vindo <?=$Usuario['loginUsuario']?>!</h3><br>
+    <?php } ?>
+
+    <form action="cadastroTarefa.php"> <button>Cadastrar Tarefas</button> </form><br>
+
     <table border="1">
         <tr>
             <td>Título</td>
@@ -68,11 +76,13 @@
     <?php } ?>
     </table>
     <br>    
+
     <form action="editorDadosUsuario.php?cod=<?=$cod?>" method="post">
         <button>Alterar Dados</button>
+    </form> 
+    <form action="db/sair.php">
+        <button>Logout</button>
     </form>
-    
-    <form action="db/sair.php"><button>Logout</button></form>
     </div>
     </div>    
 </body>
